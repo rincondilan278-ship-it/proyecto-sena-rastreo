@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Camiones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+  <a href="dashboard.html" class="btn btn-dark">⬅ Volver</a>
+  <h3 class="mt-3">🚍 Gestión de camiones</h3>
+
+  <!-- FORM -->
+  <div class="card p-3 mb-3">
+    <input id="placa" class="form-control mb-2" placeholder="Placa">
+    <input id="modelo" class="form-control mb-2" placeholder="Modelo">
+
+    <select id="estado" class="form-control mb-2">
+      <option>activo</option>
+      <option>mantenimiento</option>
+      <option>inactivo</option>
+    </select>
+
+    <button class="btn btn-success" onclick="agregarCamion()">Agregar</button>
+  </div>
+
+  <!-- LISTA -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Modelo</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaCamiones"></tbody>
+  </table>
+
+</div>
+
+<script>
+let camiones = [];
+
+function render() {
+  const tbody = document.getElementById("tablaCamiones");
+  tbody.innerHTML = "";
+
+  camiones.forEach((c, i) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${c.placa}</td>
+        <td>${c.modelo}</td>
+        <td>${c.estado}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" onclick="cambiarEstado(${i})">Cambiar estado</button>
+          <button class="btn btn-danger btn-sm" onclick="eliminar(${i})">Eliminar</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+function agregarCamion() {
+  camiones.push({
+    placa: placa.value,
+    modelo: modelo.value,
+    estado: estado.value
+  });
+
+  render();
+}
+
+function cambiarEstado(i) {
+  let estados = ["activo", "mantenimiento", "inactivo"];
+  let actual = estados.indexOf(camiones[i].estado);
+  camiones[i].estado = estados[(actual + 1) % 3];
+  render();
+}
+
+function eliminar(i) {
+  camiones.splice(i, 1);
+  render();
+}
+</script>
+
+</body>
+</html>

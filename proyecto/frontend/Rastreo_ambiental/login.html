@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | RASTREO AMBIENTAL</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <div class="logo-area">
+            <img src="img/ambiental2.png" alt="Logo Ambiental">
+            <h1>RASTREO AMBIENTAL</h1>
+            <p>Acceso al sistema</p>
+        </div>
+
+        <form id="loginForm" class="login-box" action="php/login.php" method="POST">
+            <input id="correoLogin" type="email" name="correo" placeholder="Correo electrónico" required>
+            <input id="passwordLogin" type="password" name="password" placeholder="Contraseña" required>
+
+            <button type="submit">INICIAR SESIÓN</button>
+
+            <div class="register-link">
+                ¿No tienes una cuenta?
+                <a href="register.html">Registrarse</a>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+</html>

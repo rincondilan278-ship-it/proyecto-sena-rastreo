@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Horarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+  <a href="dashboard.html" class="btn btn-dark">⬅ Volver</a>
+
+  <h3>⏰ Gestión de horarios</h3>
+
+  <div class="card p-3">
+
+    <input id="ruta" class="form-control mb-2" placeholder="Ruta">
+    <input id="hora" type="time" class="form-control mb-2">
+
+    <button class="btn btn-success" onclick="agregar()">Agregar</button>
+
+  </div>
+
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Ruta</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
+
+</div>
+
+<script>
+let horarios = [];
+
+function agregar() {
+  horarios.push({
+    ruta: ruta.value,
+    hora: hora.value
+  });
+
+  render();
+}
+
+function render() {
+  tabla.innerHTML = "";
+
+  horarios.forEach(h => {
+    tabla.innerHTML += `
+      <tr>
+        <td>${h.ruta}</td>
+        <td>${h.hora}</td>
+      </tr>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>

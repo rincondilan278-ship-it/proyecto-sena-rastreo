@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro | RASTREO AMBIENTAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="register-page">
+
+<div class="register-container">
+
+    <div class="logo-area">
+        <img src="img/ambiental2.png" alt="Logo">
+        <h1>RASTREO AMBIENTAL</h1>
+        <p>Crear nueva cuenta</p>
+    </div>
+
+    <form class="register-box" action="php/register.php" method="POST">
+
+        <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+        <input id="apellido" name="apellido" type="text" placeholder="Apellido" required>
+        <input id="correo" name="correo" type="email" placeholder="Correo electrónico" required>
+        <input name="password" type="password" placeholder="Contraseña" required>
+        <input id="telefono" name="telefono" type="text" placeholder="Teléfono">
+        <input id="direccion" name="direccion" type="text" placeholder="Dirección">
+
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="">Seleccione tipo de usuario</option>
+            <option value="ciudadano">Ciudadano</option>
+            <option value="funcionario">Funcionario</option>
+            <option value="administrador">Administrador</option>
+            <option value="conductor">Conductor</option>
+        </select>
+
+        <div id="conductorFields" class="extra-fields">
+            <input id="num_documento" name="num_documento" type="text" placeholder="Número documento">
+            <input id="licencia" name="licencia" type="text" placeholder="Número licencia">
+            <input id="vehiculo_asignado" name="vehiculo_asignado" type="text" placeholder="Vehículo asignado">
+        </div>
+
+        <div id="funcionarioFields" class="extra-fields">
+            <input id="cargo" name="cargo" type="text" placeholder="Cargo">
+            <input id="dependencia" name="dependencia" type="text" placeholder="Dependencia">
+        </div>
+
+        <div id="adminFields" class="extra-fields">
+            <select id="nivel_acceso" name="nivel_acceso">
+                <option value="basico">Acceso Básico</option>
+                <option value="medio">Acceso Medio</option>
+                <option value="super">Acceso Super</option>
+            </select>
+        </div>
+
+        <button type="submit">CREAR CUENTA</button>
+
+        <div class="register-link">
+            ¿Ya tienes cuenta?
+            <a href="login.html">Iniciar sesión</a>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
