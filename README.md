@@ -35,9 +35,9 @@ Abrir los archivos HTML ubicados en la carpeta `templates`.
 ## Integrantes
 
 - Dilan Andrey
-- Celeste mora
+- Celeste Mora
 - Sara Peña
-- Sharon mosquera
+- Sharon Mosquera
 
 ## Estado del proyecto
 
