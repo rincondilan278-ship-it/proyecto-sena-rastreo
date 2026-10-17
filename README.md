@@ -10,7 +10,8 @@ Este proyecto es una aplicación desarrollada para gestionar el proceso de recic
 - Generar reportes de reciclaje.
 
 ## Tecnologías utilizadas
-- Python
+- typescript
+- react
 - HTML
 - CSS
 - SQL
